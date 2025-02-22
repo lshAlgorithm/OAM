@@ -2,7 +2,8 @@
 
 > [!important]
 > 
-> JUST A TOY! For the paper of my general education.
+> JUST A TOY! For the paper of my general education class.
+> 
 > This repository does **NOT** constitute any investement advice.
 
 1. buy in/out
