@@ -1,3 +1,10 @@
+# Optimal Arbitrage Mix
+
+> [!important]
+> 
+> JUST A TOY! For the paper of my general education.
+> This repository does **NOT** constitute any investement advice.
+
 1. buy in/out
 	- no bounds
 	- output:
@@ -17,3 +24,8 @@
 	投资组合标准差: 4.431239396945929
 	夏普比率: 0.3964044481163432
 	```
+
+3. Scale up the share options by adding:
+   1. current_prices
+   2. bounds
+   3. initial_guess

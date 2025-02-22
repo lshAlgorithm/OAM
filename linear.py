@@ -2,18 +2,18 @@ import numpy as np
 from scipy.optimize import minimize
 
 # 当前价格
-current_prices = np.array([10, 15, 32])
+current_prices = np.array([10, 15, 32,4])
 
 # 不同情景下的收益
-good_scenario = np.array([15, 24, 40])
-medium_scenario = np.array([11, 18, 30])
-bad_scenario = np.array([6, 10, 20])
+good_scenario = np.array([15, 24, 40,10])
+medium_scenario = np.array([11, 18, 30,5])
+bad_scenario = np.array([6, 10, 20,1])
 
 # 无风险收益率
 risk_free_rate = 0.06
 
 # 情景概率（假设每种情景概率相等）
-probabilities = np.array([1/3, 1/3, 1/3])
+probabilities = np.array([1/3, 1/3, 1/3]) # 依据你对市场的判断填入此处
 
 # 计算每种情景下的收益
 scenario_returns = np.vstack([good_scenario - current_prices,
@@ -39,10 +39,10 @@ def negative_sharpe_ratio(weights):
 constraints = ({'type': 'eq', 'fun': lambda weights: np.sum(weights) - 1})
 
 # 初始猜测（均匀分布）
-initial_guess = np.ones(4) / 4
+initial_guess = np.ones(5) / 5
 
 # 边界条件：权重必须非负
-bounds = [(0, None), (0, None), (0, None), (0, None)]
+bounds = [(0, None), (0, None), (0, None), (0, None), (0, None)]
 
 # 优化
 result = minimize(negative_sharpe_ratio, initial_guess, method='SLSQP', constraints=constraints, bounds=bounds)
